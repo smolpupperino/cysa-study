@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#17181b">
+  <script>try{var t=(JSON.parse(localStorage.getItem("cysa.v1")||"{}")||{}).theme;t=t==="light"?"light":"dark";document.documentElement.setAttribute("data-theme",t);if(t==="light")document.querySelector('meta[name=theme-color]').setAttribute("content","#fafafa")}catch(e){document.documentElement.setAttribute("data-theme","dark")}</script>
+  <meta name="description" content="A calm, focused CySA+ CS0-004 study workspace.">
+  <title>CySA+ Study OS</title>
+  <link rel="stylesheet" href="app.css?v=darkfirst3">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar" id="topbar">
+      <a class="brand" href="#/home" aria-label="CySA+ Study OS home">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span class="brand-copy"><b>CySA<span>+</span></b><small>STUDY OS</small></span>
+      </a>
+      <div class="topbar-context" id="topbarContext">Today</div>
+      <div class="top-actions">
+        <button class="icon-button" id="headerSearch" type="button" aria-label="Search" title="Search">
+          <span data-icon="search"></span>
+        </button>
+        <button class="icon-button" id="headerTheme" type="button" aria-label="Change theme" title="Change theme">
+          <span data-icon="theme"></span>
+        </button>
+        <button class="icon-button" id="headerMenu" type="button" aria-label="Open menu" title="Menu" aria-expanded="false">
+          <span data-icon="menu"></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="workspace">
+      <aside class="side-nav" aria-label="Primary navigation">
+        <div class="side-label">Workspace</div>
+        <nav>
+          <a href="#/home" data-nav="home"><span data-icon="home"></span><span>Today</span></a>
+          <a href="#/learn" data-nav="learn"><span data-icon="book-open"></span><span>Learn</span></a>
+          <a href="#/listen" data-nav="listen"><span data-icon="headphones"></span><span>Listen</span></a>
+          <a href="#/practice" data-nav="practice"><span data-icon="target"></span><span>Practice</span></a>
+          <a href="#/cards" data-nav="cards"><span data-icon="cards"></span><span>Cards</span><span class="nav-count" id="navDue" hidden></span></a>
+        </nav>
+        <div class="side-label side-label-lower">Library</div>
+        <nav>
+          <a href="#/book" data-nav="book"><span data-icon="library"></span><span>Study guide</span></a>
+          <a href="#/objectives" data-nav="objectives"><span data-icon="target"></span><span>Objectives</span></a>
+          <a href="#/reference" data-nav="reference"><span data-icon="grid"></span><span>Glossary &amp; sheets</span></a>
+          <a href="#/stats" data-nav="stats"><span data-icon="chart"></span><span>Stats</span></a>
+        </nav>
+        <div class="side-label side-label-lower">System</div>
+        <nav>
+          <a href="#/settings" data-nav="settings"><span data-icon="settings"></span><span>Settings</span></a>
+          <a href="#/search" data-nav="search"><span data-icon="search"></span><span>Search</span></a>
+        </nav>
+        <div class="side-footer"><span class="status-dot"></span><span>Private · saves on this device</span></div>
+      </aside>
+
+      <main id="app" class="main-content" tabindex="-1"></main>
+    </div>
+
+    <nav class="mobile-tabs" aria-label="Mobile navigation">
+      <a href="#/home" data-nav="home"><span data-icon="home"></span><small>Today</small></a>
+      <a href="#/learn" data-nav="learn"><span data-icon="book-open"></span><small>Learn</small></a>
+      <a href="#/listen" data-nav="listen"><span data-icon="headphones"></span><small>Listen</small></a>
+      <a href="#/practice" data-nav="practice"><span data-icon="target"></span><small>Practice</small></a>
+      <a href="#/cards" data-nav="cards"><span data-icon="cards"></span><small>Cards</small><b class="tab-badge" id="mobileDue" hidden></b></a>
+    </nav>
+
+    <section id="audioDock" class="audio-dock" hidden aria-label="Audio player"></section>
+    <section id="menuSheet" class="menu-sheet" hidden aria-label="More workspace menu" aria-modal="true" role="dialog">
+      <button class="menu-backdrop" type="button" data-action="close-menu" aria-label="Close menu"></button>
+      <div class="menu-panel">
+        <div class="menu-head"><div><p class="eyebrow">WORKSPACE</p><h2>More to explore</h2></div><button class="icon-button" type="button" data-action="close-menu" aria-label="Close menu"><span data-icon="close"></span></button></div>
+        <nav class="menu-links">
+          <a href="#/book" data-menu-link><span class="menu-link-icon"><span data-icon="library"></span></span><span><b>Study guide</b><small>Chapter text, labs, and essentials</small></span><span data-icon="chevron"></span></a>
+          <a href="#/objectives" data-menu-link><span class="menu-link-icon"><span data-icon="target"></span></span><span><b>Objectives</b><small>Official CS0-004 outline</small></span><span data-icon="chevron"></span></a>
+          <a href="#/reference" data-menu-link><span class="menu-link-icon"><span data-icon="grid"></span></span><span><b>Glossary &amp; cheat sheets</b><small>Fast lookup for the edges</small></span><span data-icon="chevron"></span></a>
+          <a href="#/stats" data-menu-link><span class="menu-link-icon"><span data-icon="chart"></span></span><span><b>Stats</b><small>Accuracy, gaps, and forecast</small></span><span data-icon="chevron"></span></a>
+          <a href="#/settings" data-menu-link><span class="menu-link-icon"><span data-icon="settings"></span></span><span><b>Settings</b><small>Theme, exam date, and backups</small></span><span data-icon="chevron"></span></a>
+          <a href="#/search" data-menu-link><span class="menu-link-icon"><span data-icon="search"></span></span><span><b>Search</b><small>Find a concept anywhere</small></span><span data-icon="chevron"></span></a>
+        </nav>
+      </div>
+    </section>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <div id="modalRoot"></div>
+    <audio id="audio" preload="metadata"></audio>
+  </div>
+
+  <script src="data/core.js?v=darkfirst3"></script>
+  <script src="app.js?v=darkfirst3"></script>
+</body>
+</html>
